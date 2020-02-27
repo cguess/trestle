@@ -20,6 +20,11 @@
 
     <%= hook :stylesheets %>
 
+    <% if Rails.env == "development" %>
+    <!--  React dev tools is for testing Safari -->
+    <script src="http://localhost:8097"></script>
+    <% end %>
+    
     <%= javascript_include_tag "turbolinks" if Trestle.config.turbolinks %>
     <%= javascript_include_tag "trestle/admin", 'data-turbolinks-track': 'reload' %>
 
